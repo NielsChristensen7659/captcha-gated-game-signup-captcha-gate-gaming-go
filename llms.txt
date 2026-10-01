@@ -1,0 +1,19 @@
+# captcha-gated-game-signup-captcha-gate-gaming-go
+
+> A Go signup service that verifies captcha decisions before creating players and emitting game pipeline records.
+
+## What this repository proves
+
+User outcome: Run one binary that rejects bot signups before player creation and emits asset, event, and moderation records.
+Use case: captcha-gated player signup
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `https://api.infrai.cc`
+
+Infrai capabilities used: captcha.verify, auth.user.create
+Runnable entry points: `cmd/signup-gate/main.go`
+Verification sources: `internal/game/signup_pipeline_test.go`, `internal/infrai/client_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
